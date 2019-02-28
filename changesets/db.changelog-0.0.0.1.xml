@@ -24,7 +24,6 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="name" type="varchar(254)"/>
-            <column name="artist" type="int"/>
         </createTable>
     </changeSet>
 
@@ -69,11 +68,37 @@
     </changeSet>
 
 
-    <changeSet author="Ivan Equihua" id="20190222-2">
-        <createTable tableName="Ivan.Equihua">
-            <column name="jaja_salu2" type="BIT"/>
-            <column name="ya_es_toda_wey" type="VARCHAR(25)"/>
-        </createTable>
+    <changeSet author="Ivan Herrera Equihua" id="20190224-7">
+        <addForeignKeyConstraint baseColumnNames="genre"
+         baseTableName="song"
+          constraintName="fk_song_genre"
+           referencedColumnNames="id"
+            referencedTableName="genre"/>
+    </changeSet>
+
+    <changeSet author="Ivan Herrera Equihua" id="20190224-8">
+        <addForeignKeyConstraint baseColumnNames="song_id"
+         baseTableName="purchase"
+          constraintName="fk_purchase_song"
+           referencedColumnNames="id"
+            referencedTableName="song"/>
+    </changeSet>
+
+
+    <changeSet author="Ivan Herrera Equihua" id="20190224-9">
+        <addForeignKeyConstraint baseColumnNames="client_id"
+         baseTableName="purchase"
+          constraintName="fk_purchase_client"
+           referencedColumnNames="id"
+            referencedTableName="client"/>
+    </changeSet>
+
+    <changeSet author="Ivan Herrera Equihua" id="20190224-10">
+        <addForeignKeyConstraint baseColumnNames="artist"
+         baseTableName="song"
+          constraintName="fk_song_artist"
+           referencedColumnNames="id"
+            referencedTableName="artist"/>
     </changeSet>
 
 </databaseChangeLog> 
