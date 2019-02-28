@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+
+
+    <changeSet author="Ivan Herrera Equihua" id="20190228-1">
+        <createTable tableName="song">
+            <column name="id" type="INT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)"/>
+            <column name="album" type="int"/>
+            <column name="genre" type="int"/>
+            <column name="artist" type="int"/>
+            <column name="duration" type="int"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="Ivan Herrera Equihua" id="20190228-2">
+        <createTable tableName="album">
+            <column name="id" type="INT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(254)"/>
+            <column name="artist" type="int"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="Ivan Herrera Equihua" id="20190228-3">
+        <createTable tableName="genre">
+            <column name="id" type="INT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(254)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="Ivan Herrera Equihua" id="20190228-4">
+        <createTable tableName="artist">
+            <column name="id" type="INT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)"/>
+            <column name="nationality" type="varchar(254)"/>
+        </createTable>
+    </changeSet>
+
+    
+    <changeSet author="Ivan Herrera Equihua" id="20190228-5">
+        <createTable tableName="client">
+            <column name="id" type="INT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(254)"/>
+        </createTable>
+    </changeSet>
+
+
+    <changeSet author="Ivan Herrera Equihua" id="20190228-6">
+        <createTable tableName="purchase">
+            <column name="id" type="INT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="client_id" type="int"/>
+            <column name="song_id" type="int"/>
+        </createTable>
+    </changeSet>
+
+
+    <changeSet author="Ivan Equihua" id="20190222-2">
+        <createTable tableName="Ivan.Equihua">
+            <column name="jaja_salu2" type="BIT"/>
+            <column name="ya_es_toda_wey" type="VARCHAR(25)"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog> 
