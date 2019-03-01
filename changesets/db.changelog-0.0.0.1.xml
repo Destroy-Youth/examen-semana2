@@ -101,4 +101,36 @@
             referencedTableName="artist"/>
     </changeSet>
 
+    <changeSet author="Ivan Herrera Equihua" id="20190228-11">
+        <createTable tableName="song_album">
+            <column name="album_id" type="int"/>
+            <column name="song_id" type="int"/>
+        </createTable>
+    </changeSet>
+
+        <changeSet author="Ivan Herrera Equihua" id="20190228-12">
+    <addPrimaryKey 
+            columnNames="album_id,song_id"
+            constraintName="pk_song_album"
+            tableName="song_album"/>
+    </changeSet>
+
+    <changeSet author="Ivan Herrera Equihua" id="20190228-13">
+        <addForeignKeyConstraint baseColumnNames="album_id"
+         baseTableName="song_album"
+          constraintName="fk_songalbum_album"
+           referencedColumnNames="id"
+            referencedTableName="album"/>
+    </changeSet>
+
+    <changeSet author="Ivan Herrera Equihua" id="20190228-14">
+        <addForeignKeyConstraint baseColumnNames="song_id"
+         baseTableName="song_album"
+          constraintName="fk_songalbum_song"
+           referencedColumnNames="id"
+            referencedTableName="song"/>
+    </changeSet>
+
+       
+
 </databaseChangeLog> 
